@@ -1,0 +1,72 @@
+package model;
+
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.*;
+
+@Entity
+public class employee implements Serializable {
+
+	@Id
+	@Column(nullable = false, updatable = false)
+	private long id;
+	@Column(nullable = false)
+	private String role;
+	@Column(nullable = false)
+	private Date startDate;
+	@Column(nullable = false)
+	private boolean isActive;
+
+	
+
+	public employee(long id, String role, Date startDate, boolean isActive) {
+		this.id = id;
+		this.role = role;
+		this.startDate = startDate;
+		this.isActive = isActive;
+	}
+	
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	@Override
+	public String toString() {
+		return "employee{ "+
+					"id='" + id + "'"+
+					", role='" + role +"'"+ 
+					", startDate='" + startDate + "'"+
+					", isActive='" + isActive + "'"+
+					"}";
+	}
+
+}

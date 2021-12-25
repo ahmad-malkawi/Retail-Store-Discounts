@@ -1,0 +1,49 @@
+package model;
+
+import java.io.Serializable;
+
+import javax.persistence.*;
+
+@Entity
+public class Person implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(nullable = false, updatable = false)
+	private long person_id;
+	@Column(nullable = false)
+	private String name;
+	@Column(nullable = false)
+	private String phone;
+
+	public Person(long person_id, String name, String phone) {
+		this.person_id = person_id;
+		this.name = name;
+		this.phone = phone;
+	}
+
+	public long getPerson_id() {
+		return person_id;
+	}
+
+	public void setPerson_id(long person_id) {
+		this.person_id = person_id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+}

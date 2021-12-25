@@ -1,0 +1,11 @@
+package services;
+
+import repo.PersonRepo;
+
+public class PersonService {
+	private final PersonRepo personRepo;
+	
+	public PersonService (PersonRepo personRepo) {
+		this.personRepo = personRepo;
+	}
+}

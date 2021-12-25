@@ -1,0 +1,9 @@
+package enums;
+
+public enum PersonType {
+	New_customer(0),customer(1),employee(2);
+
+	PersonType(int i) {
+		// TODO Auto-generated constructor stub
+	}
+}

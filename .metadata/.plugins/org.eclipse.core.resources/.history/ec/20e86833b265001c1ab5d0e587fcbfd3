@@ -1,0 +1,49 @@
+package com.Store.Discounts.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Store.Discounts.Repository.PersonRepository;
+import com.Store.Discounts.model.Person;
+
+@Service
+public class PersonService {
+	private final PersonRepository personRepo;
+	
+	@Autowired
+	public PersonService (PersonRepository personRepo) {
+		this.personRepo = personRepo;
+	}
+	
+	public Person addPerson(Person person) {
+		return personRepo.save(person);
+	} 
+	
+	public List<Person> findAllPersons(){
+		return personRepo.findAll();
+	}
+	
+	public Person upDatePerson (Person person) {
+		return personRepo.save(person);
+	}
+	public void deletePerson(Long id) {
+		personRepo.deleteById(id);
+	}
+	
+	public Person findPersonById(Long id) {
+		return	personRepo.getById(id);	
+	}
+	public Person findPersonByPhone(String phone) {
+		return	personRepo.getByPhone(phone);	
+	}
+	public Person getOrCreatePersonByPhone(String phone) {
+		Person person = personRepo.getByPhone(phone);
+		if(person == null) {
+			person = new Person();
+		}
+		
+		return	person;
+	}
+}

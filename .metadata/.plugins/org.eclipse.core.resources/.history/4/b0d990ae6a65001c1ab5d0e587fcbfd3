@@ -1,0 +1,5 @@
+package com.Store.Discounts.services;
+
+public class EmployeeService {
+
+}

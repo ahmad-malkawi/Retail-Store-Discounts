@@ -1,0 +1,15 @@
+package com.Store.Discounts.model;
+
+import java.io.Serializable;
+
+import javax.persistence.*;
+
+@Entity
+public class Bill implements Serializable {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(nullable = false, updatable = false)
+	private Long billId;
+	
+}

@@ -1,0 +1,50 @@
+package com.Store.Discounts.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Store.Discounts.Repository.BillRepository;
+import com.Store.Discounts.model.Bill;
+import com.Store.Discounts.model.Person;
+
+@Service
+public class BillService {
+	private final BillRepository billRepository;
+	private final PersonService personService;
+
+	@Autowired
+	public BillService(BillRepository billRepository,PersonService personService) {
+		this.billRepository = billRepository;
+		this.personService = personService;
+	}
+
+	public Bill addBill(Bill bill) {
+		return billRepository.save(bill);
+	}
+
+	public List<Bill> findAllBills() {
+		return billRepository.findAll();
+	}
+
+	public Bill upDateBill(Bill bill) {
+		return billRepository.save(bill);
+	}
+
+	public void deleteBill(Long id) {
+		billRepository.deleteById(id);
+	}
+
+	public Bill findBillById(Long id) {
+		return billRepository.getById(id);
+	}
+	
+	public  Bill addBillWithDiscunt(String Phone,double amount) {
+		Person findPersonByPhone = personService.findPersonByPhone(Phone);
+		Bill bill = new Bill();
+		bill.setPerson(findPersonByPhone);
+		bill.setBillAmount(amount);
+		return billRepository.save(bill);
+	}
+}

@@ -1,0 +1,26 @@
+package com.Store.Discounts.model;
+
+import java.io.Serializable;
+
+import javax.persistence.*;
+
+@Entity
+public class Bill implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9168345126005395696L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(nullable = false, updatable = false)
+	private Long billId;
+	@JoinColumn(name = "personId" ,nullable = false)
+	Person person;
+	private double billAmount;
+	private double discountAmount;
+	private String reson;
+	private double billTotal;
+		 
+	
+}

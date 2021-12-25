@@ -1,0 +1,14 @@
+package services;
+
+import org.springframework.stereotype.Service;
+
+import repo.PersonRepo;
+
+@Service
+public class PersonService {
+	private final PersonRepo personRepo;
+	
+	public PersonService (PersonRepo personRepo) {
+		this.personRepo = personRepo;
+	}
+}

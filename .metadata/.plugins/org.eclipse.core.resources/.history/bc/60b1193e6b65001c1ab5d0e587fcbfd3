@@ -1,0 +1,36 @@
+package com.Store.Discounts.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.Store.Discounts.Repository.EmployeeRepository;
+import com.Store.Discounts.model.Employee;
+
+public class EmployeeService {
+private final EmployeeRepository employeeRepo;
+	
+	@Autowired
+	public EmployeeService (EmployeeRepository employeeRepo) {
+		this.employeeRepo = employeeRepo;
+	}
+	
+	public Employee addEmployee(Employee employee) {
+		return employeeRepo.save(employee);
+	} 
+	
+	public List<Employee> findAllEmployees(){
+		return employeeRepo.findAll();
+	}
+	
+	public Employee upDateEmployee (Employee employee) {
+		return employeeRepo.save(employee);
+	}
+	public void deleteEmployee(Long id) {
+		employeeRepo.deleteById(id);
+	}
+	
+	public Employee findEmployeeById(Long id) {
+		return	employeeRepo.getById(id);	
+	}
+}

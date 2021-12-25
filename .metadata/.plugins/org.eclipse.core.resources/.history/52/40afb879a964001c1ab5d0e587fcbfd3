@@ -1,0 +1,7 @@
+package services;
+
+import repo.PersonRepo;
+
+public class PersonService {
+	private final PersonRepo personRepo;
+}

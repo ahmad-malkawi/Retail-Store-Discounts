@@ -1,0 +1,19 @@
+package model;
+
+import java.io.Serializable;
+
+import javax.persistence.*;
+
+
+@Entity
+public class Person implements Serializable{
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(nullable = false, updatable = false)
+	private long person_id;
+	private String person_Name;
+	private String person_phone;
+
+	
+}

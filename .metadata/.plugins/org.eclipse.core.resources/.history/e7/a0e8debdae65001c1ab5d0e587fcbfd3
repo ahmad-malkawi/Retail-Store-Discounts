@@ -1,0 +1,20 @@
+package maper;
+
+public class PersonBillMaper {
+	private String phone;
+	private String amount;
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getAbillAmount() {
+		return amount;
+	}
+	public void setAbillAmount(String amount) {
+		this.amount = abillAmount;
+	}
+	
+	
+}

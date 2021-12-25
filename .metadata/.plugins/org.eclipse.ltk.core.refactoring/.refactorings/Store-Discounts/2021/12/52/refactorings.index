@@ -1,0 +1,16 @@
+1640343687794	Rename package 'com.Store.test.Store.Discounts'
+1640343748607	Rename package 'com.Store.test.Store.Discounts'
+1640352300227	Rename package 'model'
+1640352369109	Rename package 'repo'
+1640352379813	Rename package 'services'
+1640424352395	Rename package 'com.Store.Discounts.repo'
+1640424367179	Rename type 'PersonRepo'
+1640424680058	Rename field 'isActive'
+1640424709823	Rename local variable 'isActive'
+1640426851618	Rename type 'employee'
+1640442766957	Rename field 'id'
+1640442793095	Rename field 'PersonId'
+1640456478828	Delete elements
+1640465977698	Rename resource 'HELP.md'
+1640465983661	Delete element
+1640465998025	Delete element
